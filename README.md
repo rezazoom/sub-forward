@@ -15,6 +15,8 @@ This simple PHP script helps users forward their subscription links through anot
 
 ## Usage
 
+### For Users with SSH Access (e.g., VPS or Dedicated Server)
+
 1. Clone the repository to your server:
 
     ```bash
@@ -39,6 +41,46 @@ This simple PHP script helps users forward their subscription links through anot
 4. Deploy the script to your web server (e.g., Apache or Nginx).
 
 5. Use the URL of your forwarder server instead of the original subscription link.
+
+---
+
+### For Users on Web Hosts (e.g., cPanel, DirectAdmin)
+
+1. **Download the ZIP file** from the repository:
+
+   - If you're using a hosting service like cPanel or DirectAdmin, you can download the repository as a ZIP file.
+   - Go to the repository's page and click on the green "Code" button, then select "Download ZIP."
+
+2. **Upload the ZIP file** to your hosting server:
+
+   - In your hosting panel (cPanel or DirectAdmin), navigate to the **File Manager**.
+   - Go to the `public_html` directory (or the relevant web root directory for your site).
+   - Upload the ZIP file and extract its contents.
+
+3. **Update the `index.php` file**:
+
+   - In your File Manager, open the `index.php` file and update the following line with your target domain:
+
+    ```php
+    const TARGET_HOST = 'https://your-new-domain-here.com'; // Write your target host URL here
+    ```
+
+4. **Create or update the `.htaccess` file**:
+
+   - In the same `public_html` directory, create a `.htaccess` file (if it doesn't exist) with the following content:
+
+    ```apache
+    RewriteEngine On
+    RewriteRule . index.php [L]
+    ```
+
+   This ensures that all requests are routed to the `index.php` file.
+
+5. **Test your setup**:
+
+   - Once everything is uploaded and updated, use the URL of your forwarder server instead of the original subscription link.
+
+---
 
 ## How It Works
 
