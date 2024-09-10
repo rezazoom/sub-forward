@@ -20,7 +20,7 @@ This simple PHP script helps users forward their subscription links through anot
 1. Clone the repository to your server:
 
     ```bash
-    git clone https://github.com/yourusername/sub-forward.git
+    git clone https://github.com/rezazoom/sub-forward.git
     ```
 
 2. Open the `index.php` file and update the following line with your target domain:
