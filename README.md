@@ -115,3 +115,9 @@ This simple PHP script helps users forward their subscription links through anot
 ## Disclaimer
 
 This script is intended for educational purposes and for use in legal, ethical contexts. The author is not responsible for any misuse of this tool.
+
+#### ⚠️ Performance & Architecture Notice
+
+For production-grade deployments, consider replacing this PHP-based forwarder with a dedicated reverse proxy such as NGINX or HAProxy.
+
+PHP is not designed to handle high-performance, concurrent proxy workloads efficiently. While this script is suitable for lightweight or experimental use, serious or large-scale deployments should rely on purpose-built reverse proxy solutions for better performance, stability, and resource utilization.
